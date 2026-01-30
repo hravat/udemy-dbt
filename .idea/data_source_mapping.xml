@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/db/iniit/data_test.sql" value="c1c2d432-e231-4a5d-b4b4-9973c7e8e3fb" />
+    <file url="file://$PROJECT_DIR$/db/iniit/init.sql" value="c1c2d432-e231-4a5d-b4b4-9973c7e8e3fb" />
+    <file url="file://$PROJECT_DIR$/db/iniit/marquez.sql" value="c1c2d432-e231-4a5d-b4b4-9973c7e8e3fb" />
+    <file url="file://$PROJECT_DIR$/db/iniit/table_creation.sql" value="c1c2d432-e231-4a5d-b4b4-9973c7e8e3fb" />
+  </component>
+</project>

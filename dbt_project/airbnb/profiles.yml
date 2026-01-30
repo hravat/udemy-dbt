@@ -1,0 +1,35 @@
+airbnb:
+  outputs:
+    dev:
+      dbname: airbnb
+      host: postgres
+      pass: user@123
+      port: 5432
+      schema: dev
+      threads: 4
+      type: postgres
+      user: dbt
+  target: dev
+default:
+  outputs:
+    dev:
+      dbname: airbnb
+      host: postgres
+      password: pass1
+      schema: public
+      threads: 4
+      type: postgres
+      user: user1
+  target: dev
+test_project:
+  outputs:
+    dev:
+      dbname: airbnb
+      host: postgres
+      pass: dbt_pass
+      port: 5432
+      schema: public
+      threads: 4
+      type: postgres
+      user: dbt_user
+  target: dev
