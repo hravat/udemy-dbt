@@ -1,0 +1,2 @@
+pg_dump -U dbt_user -F c marquez > marquez_dump.dump
+pg_dump -U dbt_user -F c airbnb > airbnb_dump.dump

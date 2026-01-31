@@ -13,4 +13,5 @@ SELECT
 FROM
     raw_reviews
 
-
+select count(*)
+from  listings
