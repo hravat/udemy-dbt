@@ -2,7 +2,7 @@ WITH raw_reviews AS (
     SELECT
         *
     FROM
-        AIRBNB.RAW.hosts
+        {{source('airbnb','hosts')}}
 )
 SELECT
     id as host_id,
