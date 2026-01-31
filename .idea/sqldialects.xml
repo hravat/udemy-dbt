@@ -2,8 +2,13 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/db/iniit/data_test.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/db/iniit/incremental_insert_test.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/db/iniit/init.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/db/iniit/marquez.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/db/iniit/table_creation.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/dbt_project/airbnb/models/dim/dim_hosts.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/dbt_project/airbnb/models/dim/dim_listings.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/dbt_project/airbnb/models/src/src_listings.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/dbt_project/airbnb/models/src/src_reviews.sql" dialect="PostgreSQL" />
   </component>
 </project>
