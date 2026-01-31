@@ -2,3 +2,4 @@ data/hosts.csv
 data/listings.csv
 data/reviews.csv
 pg_dump/airbnb_dump.dump
+pg_dump/marquez_dump.dump
