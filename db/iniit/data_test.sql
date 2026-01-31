@@ -1,21 +1,32 @@
-select *
-from airbnb.dev.scd_raw_hosts
-WHERE ID=2164
+select id,count(*)
+from airbnb.raw.listings
+group by id
+having  count(*) > 1
 
-UPDATE AIRBNB.RAW.HOSTS
-  SET UPDATED_AT = CURRENT_TIMESTAMP
-WHERE ID=2164
-
-select *
-from airbnb.raw.hosts
-WHERE ID=2164
-
-DELETE FROM HOSTS
-WHERE id = 2164
-AND ctid NOT IN (
+DELETE FROM airbnb.raw.listings
+WHERE ctid NOT IN (
   SELECT MIN(ctid)
-  FROM HOSTS
-  WHERE id = 2164
+  FROM airbnb.raw.listings
+  GROUP BY id
 );
 
 commit;
+
+
+GRANT USAGE, CREATE ON SCHEMA _test_failures TO dbt;
+GRANT USAGE, CREATE ON SCHEMA _test_failures TO dbt_user;
+
+
+GRANT USAGE, CREATE ON SCHEMA _test_failures TO dbt;
+GRANT USAGE, CREATE ON SCHEMA _test_failures TO dbt_user;
+
+
+
+GRANT CONNECT ON DATABASE airbnb TO dbt;
+GRANT TEMP ON DATABASE airbnb TO dbt;
+GRANT CREATE ON DATABASE airbnb TO dbt;
+
+GRANT CONNECT ON DATABASE airbnb TO dbt_user;
+GRANT TEMP ON DATABASE airbnb TO dbt_user;
+GRANT CREATE ON DATABASE airbnb TO dbt_user;
+
