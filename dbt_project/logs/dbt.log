@@ -414,3 +414,51 @@ Runtime Error
 [0m21:50:48.329422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa7fae5d1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa7fae5fed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7aa7fae5fcd0>]}
 [0m21:50:48.331000 [debug] [MainThread]: Flushing usage events
 [0m21:50:49.127161 [debug] [MainThread]: An error was encountered while trying to flush usage events
+==================== 2026-02-02T02:42:30.235926Z | 019c1c3a-eecd-7ae3-a227-886d8596518c ====================
+02:42:30.236667 [info ]: Installing dbt project and profile setup
+02:42:30.507810 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+02:42:30.508846 [info ]: Success Project created successfully!
+02:42:30.508983 [info ]: Info Project name: airbnb_dbt_fusion_data_bricks
+02:42:30.509038 [info ]: Info Project directory: airbnb_dbt_fusion_data_bricks
+02:42:30.509147 [info ]: Info Setting up your profile...
+02:42:30.511216 [info ]: Info Creating new profile...
+02:43:20.315486 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+02:43:29.239988 [error]: dbt1001: Failed to get input for account: IO error: read interrupted
+02:43:29.291040 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [59.1s]
+==================== 2026-02-02T02:43:59.060828Z | 019c1c3c-49c9-7d33-99c5-57bd44dee585 ====================
+02:43:59.061048 [info ]: Installing dbt project and profile setup
+02:43:59.394472 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+02:43:59.395438 [info ]: Success Project created successfully!
+02:43:59.395537 [info ]: Info Project name: airbnb_dbt_fusion_data_bricks
+02:43:59.395566 [info ]: Info Project directory: airbnb_dbt_fusion_data_bricks
+02:43:59.395618 [info ]: Info Setting up your profile...
+02:43:59.396596 [info ]: Info Creating new profile...
+02:44:04.650982 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+02:45:18.846564 [info ]: Success Profile written to /root/.dbt/profiles.yml
+02:45:18.847422 [info ]: Validating profile inputs, adapters, and connection
+
+02:45:18.847577 [info ]: dbt-fusion 2.0.0-preview.104
+02:45:18.848580 [info ]: Started loading project
+02:45:18.862785 [info ]: Loading ~/.dbt/profiles.yml
+02:45:18.876382 [info ]: Finished loading project [  0.03s]
+02:45:18.876813 [info ]: Started debugging
+02:45:18.876874 [info ]: Debugging profile: dev
+02:45:18.876941 [info ]: Debugging dbt version: 2.0.0-preview.104
+02:45:18.877024 [info ]: Debugging platform: linux x86_64 (unix)
+02:45:18.877143 [info ]: Debugging adapter type: databricks (remote)
+02:45:18.881401 [info ]: Debugging dependencies:
+  git: OK
+02:45:18.881960 [info ]: Debugging connection:
+  "schema": "default",
+  "host": "dbc-ba1f3b53-5565.cloud.databricks.com",
+  "http_path": "/sql/1.0/warehouses/a7f68b19423a4178"
+02:45:41.328456 [debug]: Query executed on node unknown:
+select 1 as id
+02:45:41.331614 [info ]: Debugging connection test: OK
+02:45:41.333559 [info ]: Debugged All checks passed!
+02:45:41.334033 [info ]: Finished debugging [ 22.46s]
+02:45:42.102245 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully for target 'dev' [1m 43s]
