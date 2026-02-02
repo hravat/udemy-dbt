@@ -9,3 +9,4 @@ pg_dump/airbnb_dump.dump
 *.dump
 pg_dump/marquez_dump.dump
 dbt/profiles.yml
+dbt_project/airbnb_dbt_fusion_data_bricks/profiles.yml
