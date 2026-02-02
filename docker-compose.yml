@@ -30,7 +30,23 @@ services:
     environment:
       - OPENLINEAGE_URL=http://api:5000
       - OPENLINEAGE_NAMESPACE=dbt
-      
+
+
+  dbt-fusion:
+    build: ./dbt-fusion
+    container_name: dbt_fusion_runner
+    depends_on:
+      - postgres
+    volumes:
+      - ./dbt_project:/usr/app
+      - ./dbt:/root/.dbt
+    working_dir: /usr/app
+    command: sleep infinity
+    networks:
+      - marquez-network
+    environment:
+      - OPENLINEAGE_URL=http://api:5000
+      - OPENLINEAGE_NAMESPACE=dbt 
 
   superset:
     image: apache/superset:latest
