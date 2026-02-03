@@ -1,16 +1,39 @@
 FROM python:3.10-slim
 
-# Create the home directory
+# 1. Essential system libraries for compiled binaries
+# Added 'procps' and 'libc6' which are often needed by dbt-fusion
+RUN apt-get update && \
+    apt-get install -y curl git unzip bash procps libc6 libstdc++6 && \
+    rm -rf /var/lib/apt/lists/*
+
+# 2. Setup environment
+WORKDIR /usr/app
+ENV SHELL=/bin/bash
+SHELL ["/bin/bash", "-c"]
+
+# 3. Fix Python dependencies FIRST
+# We do this before dbt-fusion to ensure the environment is clean
+RUN pip install --no-cache-dir --upgrade pip typing_extensions
+
+# 4. Install dbt Fusion CLI
+# The --update flag ensures it grabs the latest compatible binary
+RUN curl -fsSL https://public.cdn.getdbt.com/fs/install/install.sh | bash -s -- --update
+
+# IMPORTANT: Path for Fusion CLI
+ENV PATH="/root/.local/bin:${PATH}"
+
+# 5. Dagster Setup
 RUN mkdir -p /opt/dagster/dagster_home
+# Combined installs to reduce layers and ensure dependency resolution
+RUN pip install --no-cache-dir \
+    dagster \
+    dagster-webserver \
+    dagster-postgres \
+    dagster-dbt \
+    dbt-databricks
 
-# Install dependencies
-RUN pip install dagster dagster-webserver dagster-postgres dagster-dbt dbt-databricks dbt-postgres
-
-# Set the workdir
+# 6. Finalize app
 WORKDIR /opt/dagster/app
-
-# Copy your code
 COPY . .
 
-# Set environment variable inside the image too
 ENV DAGSTER_HOME=/opt/dagster/dagster_home

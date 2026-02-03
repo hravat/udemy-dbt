@@ -4,5 +4,5 @@ storage:
       username: dagster_user
       password: dagster_pass
       hostname: dbt_postgres
-      db_name: airbnb
+      db_name: dagster
       port: 5432

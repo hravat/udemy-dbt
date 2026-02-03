@@ -1,2 +1,8 @@
 pg_dump -U dbt_user -F c marquez > marquez_dump.dump
 pg_dump -U dbt_user -F c airbnb > airbnb_dump.dump
+pg_dump -U dbt_user -F c dagster > dagster_dump.dump
+
+pg_restore -U dbt_user -d airbnb  airbnb_dump.dump
+pg_restore -U dbt_user -d airbnb  airbnb_dump.dump
+pg_restore -U dbt_user -d marquez  marquez_dump.dump
+
