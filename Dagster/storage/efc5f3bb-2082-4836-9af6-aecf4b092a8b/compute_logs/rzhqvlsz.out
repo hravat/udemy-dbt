@@ -1,0 +1,7 @@
+[0m19:11:15  Error importing adapter: No module named 'dbt.adapters.databricks'
+Running with dbt=1.11.2
+Error importing adapter: No module named 'dbt.adapters.databricks'
+Encountered an error:
+Runtime Error
+  Credentials in profile "airbnb", target "dev" invalid: Runtime Error
+    Could not find adapter type databricks!

@@ -4,7 +4,7 @@ FROM python:3.10-slim
 RUN mkdir -p /opt/dagster/dagster_home
 
 # Install dependencies
-RUN pip install dagster dagster-webserver dagster-postgres
+RUN pip install dagster dagster-webserver dagster-postgres dagster-dbt dbt-databricks dbt-postgres
 
 # Set the workdir
 WORKDIR /opt/dagster/app

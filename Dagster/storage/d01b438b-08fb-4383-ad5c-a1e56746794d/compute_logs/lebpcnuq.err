@@ -1,0 +1,33 @@
+2026-02-03 19:51:08 +0000 - dagster - DEBUG - my_simple_dbt_job - d01b438b-08fb-4383-ad5c-a1e56746794d - 921 - LOGS_CAPTURED - Started capturing logs in process (pid: 921).
+2026-02-03 19:51:08 +0000 - dagster - DEBUG - my_simple_dbt_job - d01b438b-08fb-4383-ad5c-a1e56746794d - 921 - trigger_dbt_run - STEP_START - Started execution of step "trigger_dbt_run".
+2026-02-03 19:51:28 +0000 - dagster - INFO - my_simple_dbt_job - d01b438b-08fb-4383-ad5c-a1e56746794d - trigger_dbt_run - Copying `/opt/dagster/app/airbnb_dbt_fusion_data_bricks/target/partial_parse.msgpack` to `/opt/dagster/app/airbnb_dbt_fusion_data_bricks/target/db5abcf/partial_parse.msgpack` to take advantage of partial parsing.
+2026-02-03 19:51:28 +0000 - dagster - INFO - my_simple_dbt_job - d01b438b-08fb-4383-ad5c-a1e56746794d - trigger_dbt_run - Running dbt command: `dbt run`.
+Exception ignored in: <generator object DbtCliInvocation._stream_stdout at 0x784634663370>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 378, in stream_raw_events
+    yield event
+RuntimeError: generator ignored GeneratorExit
+2026-02-03 19:51:52 +0000 - dagster - ERROR - my_simple_dbt_job - d01b438b-08fb-4383-ad5c-a1e56746794d - 921 - trigger_dbt_run - STEP_FAILURE - Execution of step "trigger_dbt_run" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "trigger_dbt_run"::
+
+KeyError: 'nodes'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/opt/dagster/app/test.py", line 11, in trigger_dbt_run
+    yield from dbt.cli(["run"]).stream()
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_event_iterator.py", line 215, in __next__
+    return next(self._inner_iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 289, in _stream_asset_events
+    yield from event.to_default_asset_events(
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_event.py", line 571, in to_default_asset_events
+    if self._is_model_execution_event(manifest):
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_event.py", line 260, in _is_model_execution_event
+    resource_props = self._get_resource_props(self._unique_id, manifest)
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_event.py", line 280, in _get_resource_props
+    return manifest["nodes"][unique_id]
+
