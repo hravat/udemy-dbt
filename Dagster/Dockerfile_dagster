@@ -1,41 +1,46 @@
+# 1. Use a stable Python base
 FROM python:3.10-slim
 
-# 1. Essential system libraries for compiled binaries
-# Added 'procps' and 'libc6' which are often needed by dbt-fusion
+# 2. Essential system libraries
 RUN apt-get update && \
     apt-get install -y curl git unzip bash procps libc6 libstdc++6 && \
     rm -rf /var/lib/apt/lists/*
 
-# 2. Setup environment
-WORKDIR /usr/app
-ENV SHELL=/bin/bash
-SHELL ["/bin/bash", "-c"]
-
-# 3. Fix Python dependencies FIRST
-# We do this before dbt-fusion to ensure the environment is clean
-RUN pip install --no-cache-dir --upgrade pip typing_extensions
-
-# 4. Install dbt Fusion CLI
-# The --update flag ensures it grabs the latest compatible binary
-RUN curl -fsSL https://public.cdn.getdbt.com/fs/install/install.sh | bash -s -- --update
+# 3. Install 'uv' for super-fast dependency management
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# IMPORTANT: Path for Fusion CLI
+# 4. Install dbt Fusion CLI (The binary tool)
+RUN curl -fsSL https://public.cdn.getdbt.com/fs/install/install.sh | bash -s -- --update
 ENV PATH="/root/.local/bin:${PATH}"
 
-# 5. Dagster Setup
-RUN mkdir -p /opt/dagster/dagster_home
-# Use 1.11.5+ for native dbt Fusion support
-RUN pip install --no-cache-dir \
-    dagster>=1.11.5 \
-    dagster-webserver>=1.11.5 \
-    dagster-postgres>=1.11.5 \
-    dagster-dbt>=0.27.5 \
+# 5. Setup Dagster Environment
+WORKDIR /opt/dagster/app
+ENV DAGSTER_HOME=/opt/dagster/dagster_home
+RUN mkdir -p $DAGSTER_HOME
+
+# 6. Install core dependencies using uv
+# --system tells uv to install into the global container environment
+# Use uv for high-speed, reliable installations
+RUN uv pip install --system \
+    dagster \
+    dagster-webserver \
+    dagster-postgres \
+    dagster-dbt \
     dbt-databricks \
     dagster-dg-cli
 
-# 6. Finalize app
-WORKDIR /opt/dagster/app
-COPY . .
+# 7. Copy your entire app directory
+# (Remember: your .dockerignore will keep the .venv out!)
+#COPY . .
 
-ENV DAGSTER_HOME=/opt/dagster/dagster_home
+# 8. Install your projects in 'editable' mode
+# This ensures Python can find 'dagster_airbnb' and 'dagster_airbnb_new'
+#RUN uv pip install --system -e ./dagster_airbnb && \
+#    uv pip install --system -e ./dagster-airbnb-new
+
+# 9. Final Setup
+ENV SHELL=/bin/bash
+EXPOSE 3000
+
+# Start the webserver (Workspace.yaml will point to your projects)
+CMD ["dagster", "dev", "-h", "0.0.0.0", "-p", "3000"]

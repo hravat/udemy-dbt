@@ -4,9 +4,6 @@ requires-python = ">=3.10,<3.15"
 version = "0.1.0"
 dependencies = [
     "dagster==1.12.13",
-    "dagster-dbt>=0.28.13",
-    "dagster-postgres>=0.28.13",
-    "dbt-databricks>=1.11.4",
 ]
 
 [dependency-groups]
