@@ -1,0 +1,14 @@
+Running with dbt=1.11.2
+Registered adapter: postgres=1.10.0
+Unable to do partial parsing because a project dependency has been added
+Found 8 models, 1 analysis, 9 data tests, 1 seed, 1 operation, 2 snapshots, 3 sources, 1 exposure, 860 macros, 1 unit test
+
+Concurrency: 4 threads (target='dev')
+
+1 of 1 START hook: airbnb.on-run-start.0 ....................................... [RUN]
+1 of 1 OK hook: airbnb.on-run-start.0 .......................................... [[32mOK[0m in 0.06s]
+
+1 of 5 START sql view model dev.dim_listings ................................... [RUN]
+2 of 5 START sql view model dev.dim_hosts ...................................... [RUN]
+3 of 5 START sql incremental model dev.fact_reviews ............................ [RUN]
+1 of 5 OK created sql view model dev.dim_listings .............................. [[32mCREATE VIEW[0m in 0.90s]

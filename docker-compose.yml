@@ -96,6 +96,33 @@ services:
       - "3000:3000"
     networks:
       - marquez-network
+      
+  dagster_app:
+    build:
+      context: .
+      dockerfile: Dagster/Dockerfile_dagster
+    container_name: dagster_app
+    ports:
+      - "3001:3000"
+    environment:
+      # Match this to your volume path
+      DAGSTER_HOME: /opt/dagster/app
+      DAGSTER_POSTGRES_USER: 'dagster_user'
+      DAGSTER_POSTGRES_PASSWORD: 'dagster_pass'
+      DAGSTER_POSTGRES_DB: 'airbnb'
+      DAGSTER_POSTGRES_SCHEMA: 'dagster'
+    volumes:
+      - ./Dagster:/opt/dagster/app
+      # Map these files into the DAGSTER_HOME directory
+      - ./Dagster/dagster.yaml:/opt/dagster/app/dagster.yaml
+      - ./Dagster/workspace.yaml:/opt/dagster/app/workspace.yaml
+      - ./dbt_project/airbnb_dbt_fusion_data_bricks:/opt/airbnb_dbt_fusion_data_bricks
+    # Point the command to the EXACT path you just mounted above
+    command: dagster dev -h 0.0.0.0 -p 3000 -w /opt/dagster/app/workspace.yaml
+    working_dir: /opt/dagster/app
+    networks:
+      - marquez-network
+
 
 volumes:
   pgdata:

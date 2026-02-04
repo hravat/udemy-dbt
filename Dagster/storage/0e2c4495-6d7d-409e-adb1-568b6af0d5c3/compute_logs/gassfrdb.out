@@ -1,0 +1,1 @@
+[0m19:07:05  Error importing adapter: No module named 'dbt.adapters.databricks'

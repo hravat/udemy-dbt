@@ -1,0 +1,16 @@
+2026-02-03 18:54:11 +0000 - dagster - DEBUG - my_simple_dbt_job - 7bc47911-8db7-4db0-a423-b4682f2ddeeb - 1472 - LOGS_CAPTURED - Started capturing logs in process (pid: 1472).
+2026-02-03 18:54:11 +0000 - dagster - DEBUG - my_simple_dbt_job - 7bc47911-8db7-4db0-a423-b4682f2ddeeb - 1472 - trigger_dbt_run - STEP_START - Started execution of step "trigger_dbt_run".
+2026-02-03 18:54:11 +0000 - dagster - ERROR - my_simple_dbt_job - 7bc47911-8db7-4db0-a423-b4682f2ddeeb - 1472 - trigger_dbt_run - STEP_FAILURE - Execution of step "trigger_dbt_run" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "trigger_dbt_run"::
+
+TypeError: DbtCliResource.cli() got an unexpected keyword argument 'project_dir'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/opt/dagster/app/test.py", line 11, in trigger_dbt_run
+    yield from dbt.cli(["run"], project_dir=DBT_PROJECT_DIR).get_artifacts()
+

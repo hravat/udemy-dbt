@@ -1,0 +1,23 @@
+Running with dbt=1.11.2
+Registered adapter: databricks=1.11.4
+[[33mWARNING[0m]: Use managed Iceberg tables when table_format is iceberg. When this flag is disabled, UniForm is used instead.
+You may opt into the new behavior sooner by setting `flags.use_managed_iceberg` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+Unable to do partial parsing because saved manifest not found. Starting full parse.
+[[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.airbnb.dim
+- models.airbnb.src
+- models.airbnb
+Found 8 models, 1 analysis, 16 data tests, 1 seed, 1 operation, 2 snapshots, 3 sources, 1 exposure, 1134 macros, 1 unit test
+
+Concurrency: 1 threads (target='dev')
+
+1 of 1 START hook: airbnb_dbt_fusion_data_bricks.on-run-start.0 ................ [RUN]
+1 of 1 OK hook: airbnb_dbt_fusion_data_bricks.on-run-start.0 ................... [[32mOK[0m in 1.76s]
+
+1 of 8 START sql view model dev.src_hosts ...................................... [RUN]
+[[33mWARNING[0m]: Use revamped materializations based on separating create and insert.  This allows more performant column comments, as well as new column features.
+You may opt into the new behavior sooner by setting `flags.use_materialization_v2` to `True` in `dbt_project.yml`.
+Visit https://docs.getdbt.com/reference/global-configs/behavior-changes for more information.
+1 of 8 OK created sql view model dev.src_hosts ................................. [[32mOK[0m in 3.97s]
