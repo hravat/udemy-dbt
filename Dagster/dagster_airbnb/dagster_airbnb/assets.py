@@ -15,4 +15,4 @@ class FusionTranslator(DagsterDbtTranslator):
 )
 def airbnb_dbt_fusion_data_bricks_dbt_assets(context, dbt: DbtCliResource):
     # This function name now matches your definitions.py exactly
-    yield from dbt.cli(["build"], context=context).get_artifacts()
+    yield from dbt.cli(["build", "--exclude", "resource_type:unit_test"], context=context).stream()

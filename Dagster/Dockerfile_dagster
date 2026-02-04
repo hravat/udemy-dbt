@@ -18,6 +18,7 @@ RUN pip install --no-cache-dir --upgrade pip typing_extensions
 # 4. Install dbt Fusion CLI
 # The --update flag ensures it grabs the latest compatible binary
 RUN curl -fsSL https://public.cdn.getdbt.com/fs/install/install.sh | bash -s -- --update
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # IMPORTANT: Path for Fusion CLI
 ENV PATH="/root/.local/bin:${PATH}"
@@ -30,7 +31,8 @@ RUN pip install --no-cache-dir \
     dagster-webserver>=1.11.5 \
     dagster-postgres>=1.11.5 \
     dagster-dbt>=0.27.5 \
-    dbt-databricks
+    dbt-databricks \
+    dagster-dg-cli
 
 # 6. Finalize app
 WORKDIR /opt/dagster/app

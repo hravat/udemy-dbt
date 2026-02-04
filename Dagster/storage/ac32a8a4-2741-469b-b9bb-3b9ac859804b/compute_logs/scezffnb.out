@@ -1,0 +1,101 @@
+Running with dbt-fusion=2.0.0-preview.104
+running dbt-fusion with argumets {"command":"build","profiles_dir":"/opt/airbnb_dbt_fusion_data_bricks","vars":"{}","limit":"10","select":["fqn:*"],"resource_types":["model","seed","snapshot","test","unit_test","function"],"debug":false,"log_format":"json","log_path":"target/airbnb_dbt_fusion_data_bricks_dbt_assets-ac32a8a-706046a","target_path":"target/airbnb_dbt_fusion_data_bricks_dbt_assets-ac32a8a-706046a","project_dir":"/opt/airbnb_dbt_fusion_data_bricks","quiet":false,"write_json":true,"write_catalog":false}
+dbt-fusion 2.0.0-preview.104
+Loading profiles.yml
+  Fetching packages.yml
+Artifact written to target/airbnb_dbt_fusion_data_bricks_dbt_assets-ac32a8a-706046a/semantic_manifest.json
+Artifact written to target/airbnb_dbt_fusion_data_bricks_dbt_assets-ac32a8a-706046a/manifest.json
+ Downloading `workspace`.`dev`.`fact_reviews` (schema)
+ Downloading `workspace`.`dev`.`scd_raw_hosts` (schema)
+ Downloading `workspace`.`dev`.`scd_raw_listings` (schema)
+ Downloading `workspace`.`raw`.`hosts` (schema)
+ Downloading `workspace`.`raw`.`listings` (schema)
+ Downloading `workspace`.`raw`.`reviews` (schema)
+Began running node snapshot.airbnb_dbt_fusion_data_bricks.scd_raw_listings
+Started snapshot dev.scd_raw_listings
+Began running node snapshot.airbnb_dbt_fusion_data_bricks.scd_raw_hosts
+Started snapshot dev.scd_raw_hosts
+Began running node seed.airbnb_dbt_fusion_data_bricks.seed_full_moon_dates
+Started seed dev.seed_full_moon_dates
+Began running node model.airbnb_dbt_fusion_data_bricks.src_reviews
+Started model dev.src_reviews
+Began running node model.airbnb_dbt_fusion_data_bricks.src_listings
+Started model dev.src_listings
+Began running node model.airbnb_dbt_fusion_data_bricks.src_hosts
+Started model dev.src_hosts
+ Rendering models/src/src_reviews.sql
+ Rendering models/src/src_hosts.sql
+ Rendering models/src/src_listings.sql
+ Rendering target/snapshots/scd_raw_hosts.sql
+ Rendering target/snapshots/scd_raw_listings.sql
+Began running node model.airbnb_dbt_fusion_data_bricks.fact_reviews
+Started model dev.fact_reviews
+Began running node model.airbnb_dbt_fusion_data_bricks.dim_hosts
+Started model dev.dim_hosts
+Began running node model.airbnb_dbt_fusion_data_bricks.dim_listings
+Started model dev.dim_listings
+   Running models/src/src_hosts.sql
+   Running models/src/src_reviews.sql
+ Rendering models/dim/dim_listings.sql
+ Rendering models/dim/dim_hosts.sql
+ Rendering models/fact/fact_reviews.sql
+   Running snapshots/scd_raw_listings.sql
+   Running snapshots/scd_raw_hosts.sql
+   Running models/src/src_listings.sql
+   Running seeds/seed_full_moon_dates.csv
+Loading `workspace`.`dev`.`fact_reviews` incrementally (all missing dates)
+Began running node test.airbnb_dbt_fusion_data_bricks.not_null_dim_listings_listing_id.7cf2f13e6c
+Started test dev__test_failures.not_null_dim_listings_listing_id
+Began running node test.airbnb_dbt_fusion_data_bricks.positive_values_dim_listings_minimum_nights.bac45defb9
+Started test dev__test_failures.positive_values_dim_listings_minimum_nights
+Began running node test.airbnb_dbt_fusion_data_bricks.unique_dim_listings_listing_id.bbd176f487
+Started test dev__test_failures.unique_dim_listings_listing_id
+Began running node test.airbnb_dbt_fusion_data_bricks.accepted_values_dim_listings_187fbd1e80835aa3e276f9355628fe50.e5f6243fae
+Started test dev__test_failures.accepted_values_dim_listings_187fbd1e80835aa3e276f9355628fe50
+Began running node test.airbnb_dbt_fusion_data_bricks.relationships_dim_listings_host_id__host_id__ref_dim_hosts_.feb17140fb
+Started test dev__test_failures.relationships_dim_listings_host_id__host_id__ref_dim_hosts_
+Began running node test.airbnb_dbt_fusion_data_bricks.minimum_row_count_dim_listings_1000.01c72780e1
+Started test dev__test_failures.minimum_row_count_dim_listings_1000
+Began running node model.airbnb_dbt_fusion_data_bricks.dim_listings_with_hosts
+Started model dev.dim_listings_with_hosts
+Began running node test.airbnb_dbt_fusion_data_bricks.not_null_dim_listings_host_id.b1db6ea6c2
+Started test dev__test_failures.not_null_dim_listings_host_id
+Began running node test.airbnb_dbt_fusion_data_bricks.dim_listings_minimum_nights.78af97e30c
+Started test dev__test_failures.dim_listings_minimum_nights
+ Rendering models/dim/dim_listings_with_hosts.sql
+ Rendering tests/dim_listings_minimum_nights.sql
+Began running node test.airbnb_dbt_fusion_data_bricks.accepted_values_fact_reviews_ff3cf81d91bdab1cc22abdb65566eb0d.9d54b4bb4f
+Started test dev__test_failures.accepted_values_fact_reviews_ff3cf81d91bdab1cc22abdb65566eb0d
+Began running node test.airbnb_dbt_fusion_data_bricks.relationships_fact_reviews_b3231a9e9b452f36a94f11518ee4321e.f195ba21ff
+Started test dev__test_failures.relationships_fact_reviews_b3231a9e9b452f36a94f11518ee4321e
+Began running node model.airbnb_dbt_fusion_data_bricks.mart_fullmoon_reviews
+Started model dev.mart_fullmoon_reviews
+Began running node test.airbnb_dbt_fusion_data_bricks.not_null_fact_reviews_reviewer_name.67a3c5cb40
+Started test dev__test_failures.not_null_fact_reviews_reviewer_name
+Began running node test.airbnb_dbt_fusion_data_bricks.consistent_created_at.0dc3d99b2e
+Started test dev__test_failures.consistent_created_at
+ Rendering models/mart/mart_fullmoon_reviews.sql
+ Rendering tests/consistent_created_at.sql
+Began running node test.airbnb_dbt_fusion_data_bricks.dbt_expectations_expect_table__7a4a6e23a5be67b48dc8bec7d8738d1f.a19f4572a7
+Started test dev__test_failures.dbt_expectations_expect_table__7a4a6e23a5be67b48dc8bec7d8738d1f
+Began running node test.airbnb_dbt_fusion_data_bricks.dbt_expectations_expect_column_468e4de3f229fa6ad450d64ec382bdcb.a5abb9afeb
+Started test dev__test_failures.dbt_expectations_expect_column_468e4de3f229fa6ad450d64ec382bdcb
+Began running node test.airbnb_dbt_fusion_data_bricks.dbt_expectations_expect_column_14ee651064e2052b42ca3349fdfabb6e.6e69118fba
+Started test dev__test_failures.dbt_expectations_expect_column_14ee651064e2052b42ca3349fdfabb6e
+Began running node test.airbnb_dbt_fusion_data_bricks.dbt_expectations_expect_column_327e1554c8dfbb570a6df7b0ce562bfb.1d1b9903e9
+Started test dev__test_failures.dbt_expectations_expect_column_327e1554c8dfbb570a6df7b0ce562bfb
+Began running node unit_test.airbnb_dbt_fusion_data_bricks.mart_fullmoon_reviews.unittest_fullmoon_matcher
+Started unit test dev_dbt_test__audit.unittest_fullmoon_matcher
+ Rendering compiled/tests/unittest_fullmoon_matcher.sql
+   Running tests/unit_tests.yml
+ Succeeded [  2.47s] model dev.src_listings (view)
+Finished running node model.airbnb_dbt_fusion_data_bricks.src_listings
+   Running models/dim/dim_listings.sql
+ Succeeded [  3.72s] model dev.src_reviews (view)
+Finished running node model.airbnb_dbt_fusion_data_bricks.src_reviews
+   Running models/fact/fact_reviews.sql
+ Succeeded [  5.39s] model dev.src_hosts (view)
+Finished running node model.airbnb_dbt_fusion_data_bricks.src_hosts
+   Running models/dim/dim_hosts.sql
+    Passed [ 13.52s] unit_test dev_dbt_test__audit.unittest_fullmoon_matcher
+Finished running node unit_test.airbnb_dbt_fusion_data_bricks.mart_fullmoon_reviews.unittest_fullmoon_matcher

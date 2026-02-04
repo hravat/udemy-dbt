@@ -1,0 +1,18 @@
+2026-02-04 07:26:41 +0000 - dagster - DEBUG - __ASSET_JOB - 05dbb391-aa18-47b3-ba6c-a97cad8de978 - 9853 - LOGS_CAPTURED - Started capturing logs in process (pid: 9853).
+2026-02-04 07:26:41 +0000 - dagster - DEBUG - __ASSET_JOB - 05dbb391-aa18-47b3-ba6c-a97cad8de978 - 9853 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_START - Started execution of step "airbnb_dbt_fusion_data_bricks_dbt_assets".
+2026-02-04 07:26:41 +0000 - dagster - INFO - __ASSET_JOB - 05dbb391-aa18-47b3-ba6c-a97cad8de978 - airbnb_dbt_fusion_data_bricks_dbt_assets - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+2026-02-04 07:26:41 +0000 - dagster - INFO - __ASSET_JOB - 05dbb391-aa18-47b3-ba6c-a97cad8de978 - airbnb_dbt_fusion_data_bricks_dbt_assets - Running dbt command: `dbt build --select fqn:*`.
+2026-02-04 07:26:41 +0000 - dagster - ERROR - __ASSET_JOB - 05dbb391-aa18-47b3-ba6c-a97cad8de978 - 9853 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_FAILURE - Execution of step "airbnb_dbt_fusion_data_bricks_dbt_assets" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "airbnb_dbt_fusion_data_bricks_dbt_assets"::
+
+AttributeError: 'DbtCliInvocation' object has no attribute 'get_artifacts'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/opt/dagster/app/dagster_airbnb/dagster_airbnb/assets.py", line 18, in airbnb_dbt_fusion_data_bricks_dbt_assets
+    yield from dbt.cli(["build"], context=context).get_artifacts()
+
