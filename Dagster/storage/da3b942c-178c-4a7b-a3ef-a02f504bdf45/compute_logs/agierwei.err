@@ -1,0 +1,99 @@
+2026-02-04 22:29:18 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - LOGS_CAPTURED - Started capturing logs in process (pid: 10335).
+2026-02-04 22:29:18 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_START - Started execution of step "airbnb_dbt_fusion_data_bricks_dbt_assets".
+2026-02-04 22:29:19 +0000 - dagster - INFO - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+2026-02-04 22:29:19 +0000 - dagster - INFO - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Copying `/opt/airbnb_dbt_fusion_data_bricks/target/partial_parse.msgpack` to `/opt/airbnb_dbt_fusion_data_bricks/target/airbnb_dbt_fusion_data_bricks_dbt_assets-da3b942-fef6f45/partial_parse.msgpack` to take advantage of partial parsing.
+2026-02-04 22:29:19 +0000 - dagster - INFO - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Running dbt command: `dbt build --exclude resource_type:unit_test --select fqn:*`.
+2026-02-04 22:30:15 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "src_hosts" of type "Nothing". (Type check passed).
+2026-02-04 22:30:15 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value src_hosts.
+2026-02-04 22:30:16 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "src_listings" of type "Nothing". (Type check passed).
+2026-02-04 22:30:16 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value src_listings.
+2026-02-04 22:30:18 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "src_reviews" of type "Nothing". (Type check passed).
+2026-02-04 22:30:18 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value src_reviews.
+2026-02-04 22:30:23 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "seed_full_moon_dates" of type "Nothing". (Type check passed).
+2026-02-04 22:30:23 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value seed_full_moon_dates.
+2026-02-04 22:30:24 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "dim_hosts" of type "Nothing". (Type check passed).
+2026-02-04 22:30:24 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value dim_hosts.
+2026-02-04 22:30:24 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "dim_listings" of type "Nothing". (Type check passed).
+2026-02-04 22:30:24 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value dim_listings.
+2026-02-04 22:30:53 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `unique_dim_listings_listing_id`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:53 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:53 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `minimum_row_count_dim_listings_1000`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:53 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:53 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `not_null_dim_listings_host_id`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:53 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:55 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `positive_values_dim_listings_minimum_nights`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:55 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:55 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `not_null_dim_listings_listing_id`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:55 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:55 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `relationships_dim_listings_host_id__host_id__ref_dim_hosts_`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:55 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:55 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:56 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `dim_listings_minimum_nights`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:56 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:56 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `accepted_values_dim_listings_187fbd1e80835aa3e276f9355628fe50`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:30:56 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:30:59 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "dim_listings_with_hosts" of type "Nothing". (Type check passed).
+2026-02-04 22:31:00 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value dim_listings_with_hosts.
+2026-02-04 22:31:04 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "scd_raw_hosts" of type "Nothing". (Type check passed).
+2026-02-04 22:31:04 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value scd_raw_hosts.
+2026-02-04 22:31:04 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "scd_raw_listings" of type "Nothing". (Type check passed).
+2026-02-04 22:31:04 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value scd_raw_listings.
+2026-02-04 22:31:12 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `dbt_expectations_expect_column_14ee651064e2052b42ca3349fdfabb6e`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:12 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:12 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `dbt_expectations_expect_column_468e4de3f229fa6ad450d64ec382bdcb`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:12 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:13 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `dbt_expectations_expect_table__7a4a6e23a5be67b48dc8bec7d8738d1f`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:13 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:13 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:13 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `dbt_expectations_expect_column_327e1554c8dfbb570a6df7b0ce562bfb`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:13 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:19 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "fact_reviews" of type "Nothing". (Type check passed).
+2026-02-04 22:31:20 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value fact_reviews.
+2026-02-04 22:31:26 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `not_null_fact_reviews_reviewer_name`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:26 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:26 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `accepted_values_fact_reviews_ff3cf81d91bdab1cc22abdb65566eb0d`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:26 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:28 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `consistent_created_at`.
+
+`consistent_created_at` is a singular test with multiple dependencies. Configure an asset key in the test's dbt meta to load it as an asset check.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:28 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:28 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:28 +0000 - dagster - WARNING - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Logging an `AssetObservation` instead of an `AssetCheckResult` for dbt test `relationships_fact_reviews_b3231a9e9b452f36a94f11518ee4321e`.
+
+This test was not included in Dagster's asset check selection, and was likely executed due to dbt indirect selection.
+2026-02-04 22:31:29 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:29 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_OBSERVATION - ASSET_OBSERVATION for step airbnb_dbt_fusion_data_bricks_dbt_assets
+2026-02-04 22:31:31 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_OUTPUT - Yielded output "mart_fullmoon_reviews" of type "Nothing". (Type check passed).
+2026-02-04 22:31:32 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - ASSET_MATERIALIZATION - Materialized value mart_fullmoon_reviews.
+2026-02-04 22:31:35 +0000 - dagster - INFO - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - airbnb_dbt_fusion_data_bricks_dbt_assets - Finished dbt command: `dbt build --exclude resource_type:unit_test --select fqn:*`.
+2026-02-04 22:31:35 +0000 - dagster - DEBUG - materialize_dbt_models - da3b942c-178c-4a7b-a3ef-a02f504bdf45 - 10335 - airbnb_dbt_fusion_data_bricks_dbt_assets - STEP_SUCCESS - Finished execution of step "airbnb_dbt_fusion_data_bricks_dbt_assets" in 2m3s.

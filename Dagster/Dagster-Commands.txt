@@ -1,6 +1,15 @@
 uvx create-dagster@latest project dagster_airbnb_new
 . dagster_airbnb_new/.venv/bin/activate
-uv pip install dagster-dbt dagster-postgres dbt-databricks -e .
 cd dagster_airbnb_new
+uv pip install dagster-dbt dagster-postgres dbt-databricks dbt-postgres
 dg scaffold defs dagster_dbt.DbtProjectComponent airbnb_dbt_new  --project-path "/opt/airbnb_dbt_fusion_data_bricks"
+uv pip install -e .
+dg list defs
+
+
+
+. dagster_airbnb_new/.venv/bin/activate
+cd dagster_airbnb_new
+uv pip install dagster-dbt dagster-postgres dbt-databricks -e .
+uv pip install -e .
 dg list defs
