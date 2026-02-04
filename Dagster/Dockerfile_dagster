@@ -24,12 +24,12 @@ ENV PATH="/root/.local/bin:${PATH}"
 
 # 5. Dagster Setup
 RUN mkdir -p /opt/dagster/dagster_home
-# Combined installs to reduce layers and ensure dependency resolution
+# Use 1.11.5+ for native dbt Fusion support
 RUN pip install --no-cache-dir \
-    dagster \
-    dagster-webserver \
-    dagster-postgres \
-    dagster-dbt \
+    dagster>=1.11.5 \
+    dagster-webserver>=1.11.5 \
+    dagster-postgres>=1.11.5 \
+    dagster-dbt>=0.27.5 \
     dbt-databricks
 
 # 6. Finalize app

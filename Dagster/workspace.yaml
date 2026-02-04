@@ -1,2 +1,4 @@
 load_from:
-  - python_file: test.py
+  - python_module:
+      module_name: dagster_airbnb.definitions
+      working_directory: /opt/dagster/app/dagster_airbnb

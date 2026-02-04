@@ -1,11 +1,11 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="airbnb_dbt_fusion_data_bricks",
+    name="dagster_airbnb",
     version="0.0.1",
     packages=find_packages(),
     package_data={
-        "airbnb_dbt_fusion_data_bricks": [
+        "dagster_airbnb": [
             "dbt-project/**/*",
         ],
     },
