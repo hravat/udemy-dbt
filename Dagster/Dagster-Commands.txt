@@ -12,4 +12,6 @@ dg list defs
 cd dagster_airbnb_new
 uv pip install dagster-dbt dagster-postgres dbt-databricks -e .
 uv pip install -e .
+apt update 
+apt install time
 dg list defs

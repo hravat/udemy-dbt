@@ -5,4 +5,4 @@ load_from:
 
   - python_module:
       module_name: dagster_airbnb_new.definitions
-      working_directory: /opt/dagster/app/dagster_airbnb_new
+      working_directory: /opt/dagster/app/dagster_airbnb_new/src

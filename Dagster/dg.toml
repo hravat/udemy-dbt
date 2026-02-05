@@ -1,0 +1,6 @@
+# /opt/dagster/app/dg.toml
+directory_type = "workspace"
+
+[workspace]
+[[workspace.projects]]
+path = "dagster_airbnb_new"

@@ -43,4 +43,4 @@ ENV SHELL=/bin/bash
 EXPOSE 3000
 
 # Start the webserver (Workspace.yaml will point to your projects)
-CMD ["dagster", "dev", "-h", "0.0.0.0", "-p", "3000"]
+CMD ["dg", "dev", "-h", "0.0.0.0", "-p", "3000"]

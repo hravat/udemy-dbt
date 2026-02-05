@@ -118,7 +118,7 @@ services:
       - ./Dagster/workspace.yaml:/opt/dagster/app/workspace.yaml
       - ./dbt_project/airbnb_dbt_fusion_data_bricks:/opt/airbnb_dbt_fusion_data_bricks
     # Point the command to the EXACT path you just mounted above
-    command: dagster dev -h 0.0.0.0 -p 3000 -w /opt/dagster/app/workspace.yaml
+    command: dg dev -h 0.0.0.0 -p 3000 -w /opt/dagster/app/workspace.yaml
     working_dir: /opt/dagster/app
     networks:
       - marquez-network
